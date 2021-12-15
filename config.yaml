@@ -1,0 +1,10 @@
+server:
+  port: 8080
+  mode: "local"
+  version: ""
+postgres:
+  host: "localhost"
+  port: 5432
+  database: "laundry"
+  user: "postgres"
+  password: "babihtuan1995"

@@ -1,0 +1,12 @@
+server:
+  port: 8080
+  mode: "local"
+  version: ""
+postgres:
+  host: "localhost"
+  port: 5432
+  database: "laundry"
+  user: "postgres"
+  password: "postgres"
+jwt:
+  signature: "ny28eheih28h1irnmnmnsdbbzBHDVHWDVdhDvwd78ye12geu2eb1ebc1e812eb1uebx178eb1e178e2ge1xgiho"
