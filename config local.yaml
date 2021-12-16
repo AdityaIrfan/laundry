@@ -8,5 +8,20 @@ postgres:
   database: "laundry"
   user: "postgres"
   password: "postgres"
+redis:
+  host: "localhost"
+  port: 6379
+  database:
+  user: 
+  password:
 jwt:
   signature: "ny28eheih28h1irnmnmnsdbbzBHDVHWDVdhDvwd78ye12geu2eb1ebc1e812eb1uebx178eb1e178e2ge1xgiho"
+  refresh_signature: "jdb882hu12hixy1y39811293ynbUBAGgsc28e8989Y9Hyh8eh1x8e7h1bg7e8guidubxn2rg8h1xeu21gex17ge1x8b71"
+mail:
+  encryption: ssl
+  from: "juniantoadityairfan@gmail.com"
+  name: "Me, As a Developer"
+  host: "localhost"
+  password: ""
+  port: 456
+  username: "juniantoadityairfan@gmail.com"

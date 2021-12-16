@@ -1,4 +1,4 @@
-package transformer
+package domain
 
 import "github.com/dgrijalva/jwt-go"
 
@@ -15,14 +15,19 @@ type RefreshTokenClaims struct {
 	UUID string `json:"email"`
 }
 
-type GenerateJWTTransformer struct {
+type RefreshTokenDataClaim struct {
+	UUID string
+	JTI  string
+}
+
+type GenerateJWTResponse struct {
 	AccessToken  string `json:"access_token"`
 	RefreshToken string `json:"refresh_token"`
 	ExpiresIn    int64  `json:"expires_in"`
 }
 
-func ToGenereteJWTTransformer(signedAcessToken string, signedRefreshToken string, accessClaimExpiresAt int64) *GenerateJWTTransformer {
-	return &GenerateJWTTransformer{
+func ToGenereteJWTTransformer(signedAcessToken string, signedRefreshToken string, accessClaimExpiresAt int64) *GenerateJWTResponse {
+	return &GenerateJWTResponse{
 		AccessToken:  signedAcessToken,
 		RefreshToken: signedRefreshToken,
 		ExpiresIn:    accessClaimExpiresAt,

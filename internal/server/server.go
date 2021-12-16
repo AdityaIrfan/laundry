@@ -17,6 +17,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	baseApp "github.com/laundry/internal/app"
 	"github.com/laundry/pkg/postgres"
+	"github.com/laundry/pkg/redis"
 	"github.com/laundry/pkg/viper"
 	viperPkg "github.com/spf13/viper"
 )
@@ -45,8 +46,17 @@ func Run() {
 	}
 	defer sqlDB.Close()
 
+	// load connection redis
+	rd, err := redis.Connect()
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	// initialize logger
-	// zap, err := logger.initialize()
+	/* zap, err := logger.initialize()
+	if err != nil {
+		log.Fatal(err)
+	} */
 
 	//load fiber
 	app := fiber.New(fiber.Config{
@@ -64,6 +74,7 @@ func Run() {
 		Postgres: pg,
 		R:        app,
 		// Logger:   zap,
+		Redis: rd,
 	}
 	rh.SetupRouter()
 
